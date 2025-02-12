@@ -1,22 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Website Ucapan Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #e63946;
+        }
+
+        .nav {
+            margin: 20px 0;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #d62f3f;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .quote {
+            font-size: 22px;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Will you be my Valentine?</h1>
-        <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes</button>
-            <button class="no-button" onclick="handleNoClick()">No</button>
-        </div>
-        <div class="gif_container">
-            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+    <div class="nav">
+        <a href="page1.html">Animasi Foto</a>
+        <a href="page2.html">Ucapan Valentine</a>
+        <a href="page3.html">Will You Be My Valentine</a>
+    </div>
+
+    <!-- Page 1: Animasi Foto -->
+    <div id="page1" class="content">
+        <h1>Selamat Hari Valentine!</h1>
+        <p>Berikut beberapa gambar romantis untuk merayakan hari spesial ini:</p>
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/200x150?text=Love+1" alt="Love 1">
+            <img src="https://via.placeholder.com/200x150?text=Love+2" alt="Love 2">
+            <img src="https://via.placeholder.com/200x150?text=Love+3" alt="Love 3">
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- Page 2: Ucapan Valentine -->
+    <div id="page2" class="content">
+        <h1>Ucapan Valentine</h1>
+        <div class="quote">
+            "Cinta adalah kebahagiaan yang tidak bisa diungkapkan dengan kata-kata."
+        </div>
+        <div class="quote">
+            "Selamat Hari Valentine! Semoga cinta selalu menyertaimu."
+        </div>
+        <div class="quote">
+            "Kamu adalah alasan kenapa aku percaya pada cinta."
+        </div>
+    </div>
+
+    <!-- Page 3: Will You Be My Valentine -->
+    <div id="page3" class="content">
+        <h1>Will You Be My Valentine?</h1>
+        <p>Click one of the options below:</p>
+        <button class="button" onclick="answer('yes')">Yes</button>
+        <button class="button" onclick="answer('no')">No</button>
+
+        <div id="response"></div>
+    </div>
+
+    <div class="footer">
+        <p>Created with love 💖</p>
+    </div>
+
+    <script>
+        function answer(answer) {
+            if (answer === 'no') {
+                document.getElementById("response").innerHTML = "<p class='error-message'>Error: You said NO!</p>";
+            } else {
+                document.getElementById("response").innerHTML = "<p>Yay! I'm glad you said YES!</p>";
+            }
+        }
+    </script>
 </body>
 </html>
